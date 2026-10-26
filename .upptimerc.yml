@@ -1,31 +1,72 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: Trendtrack
+repo: status
 
+# Every URL answers without authentication. The API uses its readiness route,
+# which also checks the database. A check is down on a non-200 answer or when
+# the health body is missing, degraded above maxResponseTime.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Web app
+    slug: web-app
+    url: https://app.trendtrack.io/healthz
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: API
+    slug: api
+    url: https://app-api.trendtrack.io/api/v1/health/ready
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: '"status":"ready"'
+  - name: Sign-in
+    slug: sign-in
+    url: https://auth.trendtrack.io/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Chrome extension
+    slug: chrome-extension
+    url: https://extension-api.trendtrack.io/api/v1/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Public API & MCP
+    slug: public-api
+    url: https://api.trendtrack.io/v1/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Documentation
+    slug: documentation
+    url: https://docs.trendtrack.io/
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+
+# Only the notification secrets listed here reach the workflows.
+secrets:
+  - NOTIFICATION_SLACK
+  - NOTIFICATION_SLACK_WEBHOOK_URL
+
+assignees:
+  - RomainCrz
+
+# Upptime deletes outages shorter than 15 min by default; SOC 2 evidence keeps them.
+skipDeleteIssues: true
+
+# The public page belongs to Trendtrack, not to this repository.
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.trendtrack.io
+  name: Trendtrack Status
+  logoUrl: https://cdn.prod.website-files.com/695e742d565a221d25f5a9d4/697789c928f9552bfca3ae93_logo.svg
+  favicon: https://cdn.prod.website-files.com/695e742d565a221d25f5a9d4/6a2d049e1e8e0935de64b7c6_favicon_dark.png
+  theme: light
+  introTitle: "**Trendtrack** service status"
+  introMessage: "Live availability of the Trendtrack app, API and extension, with the history of incidents and maintenance. Questions: [support@trendtrack.io](mailto:support@trendtrack.io)."
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Trendtrack
+      href: https://www.trendtrack.io
