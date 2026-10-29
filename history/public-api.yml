@@ -1,7 +1,7 @@
 url: https://api.trendtrack.io/v1/health
-status: up
+status: degraded
 code: 200
-responseTime: 479
-lastUpdated: 2026-10-29T02:10:57.389Z
+responseTime: 3764
+lastUpdated: 2026-10-29T03:34:01.726Z
 startTime: 2026-10-26T17:20:11.440Z
 generator: Upptime <https://github.com/upptime/upptime>
