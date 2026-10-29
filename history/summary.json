@@ -78,19 +78,19 @@
     "url": "https://api.trendtrack.io/v1/health",
     "icon": "https://icons.duckduckgo.com/ip3/api.trendtrack.io.ico",
     "slug": "public-api",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 1121,
-    "timeDay": 2122,
-    "timeWeek": 1121,
-    "timeMonth": 1121,
-    "timeYear": 1121,
+    "status": "up",
+    "uptime": "99.94%",
+    "uptimeDay": "99.86%",
+    "uptimeWeek": "99.94%",
+    "uptimeMonth": "99.94%",
+    "uptimeYear": "99.94%",
+    "time": 1008,
+    "timeDay": 1562,
+    "timeWeek": 1008,
+    "timeMonth": 1008,
+    "timeYear": 1008,
     "dailyMinutesDown": {
-      "2026-10-29": 0
+      "2026-10-29": 2
     }
   },
   {
