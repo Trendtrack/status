@@ -1,7 +1,7 @@
 url: https://app-api.trendtrack.io/api/v1/health/ready
 status: up
 code: 200
-responseTime: 170
-lastUpdated: 2026-11-22T02:51:34.571Z
+responseTime: 294
+lastUpdated: 2026-11-23T03:33:23.197Z
 startTime: 2026-10-26T17:20:09.236Z
 generator: Upptime <https://github.com/upptime/upptime>
